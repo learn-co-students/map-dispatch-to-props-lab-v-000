@@ -13,7 +13,7 @@ describe('restaurants input', () => {
     let store = configureStore();
     const wrapper = mount(
       <Provider store={store}>
-        < ConnectedRestaurantInput />
+        <ConnectedRestaurantInput />
       </Provider>
     );
     let WrapperConnectedRestaurantInput = wrapper.find(ConnectedRestaurantInput).first();
