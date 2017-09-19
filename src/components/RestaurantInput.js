@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { bindActionCreators } from 'redux';
 import { addRestaurant } from '../actions/restaurants';
 import { connect } from 'react-redux';
 
@@ -27,6 +28,10 @@ export class RestaurantInput extends Component {
   handleOnSubmit(event) {
     event.preventDefault();
     this.props.addRestaurant(this.state);
+    this.setState({
+      name: '', 
+      location: ''
+    });
   }
 
   render() {
@@ -50,4 +55,10 @@ export class RestaurantInput extends Component {
   }
 };
 
-export const ConnectedRestaurantInput = connect(null, null)(RestaurantInput)
+const mapDispatchToProps = (dispatch) => {
+  return bindActionCreators({
+    addRestaurant: addRestaurant
+  }, dispatch);
+};
+ 
+export const ConnectedRestaurantInput = connect(null, mapDispatchToProps)(RestaurantInput)
