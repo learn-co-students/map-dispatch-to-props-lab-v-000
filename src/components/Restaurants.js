@@ -5,7 +5,7 @@ export class Restaurants extends Component {
 
   render() {
 
-    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}>{restaurant.name}</li>);
+    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}>Name: {restaurant.name} - Location: {restaurant.location} </li>);
 
     return (
       <div>
@@ -21,4 +21,4 @@ function mapStateToProps(state){
   return {restaurants: state.restaurants}
 }
 
-export const ConnectedRestaurants = connect(mapStateToProps)(Restaurants);
+export const ConnectedRestaurants = connect(mapStateToProps, null)(Restaurants);
