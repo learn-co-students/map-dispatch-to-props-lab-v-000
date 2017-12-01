@@ -54,7 +54,7 @@ export class RestaurantInput extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({
-    addRestaurant
+    addRestaurant //fancy syntax for this>  `addRestaurant: addRestaurant`
   }, dispatch);
 }
 
