@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Provider } from 'react-redux';
 import { ConnectedRestaurantInput } from './components/RestaurantInput';
 import { ConnectedRestaurants } from './components/Restaurants';
 
