@@ -58,3 +58,4 @@ const mapDispatchToProps = (dispatch) => {
 }
 
 export const ConnectedRestaurantInput = connect(null, mapDispatchToProps)(RestaurantInput)
+// first argument always reserved for mapStateToProps, put in null if only wanting to fuse dispatch to props
