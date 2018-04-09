@@ -51,14 +51,8 @@ export class RestaurantInput extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    restaurants: state.restaurants
-  };
-}
-
 const mapDispatchToProps = (dispatch) => {
   return bindActionCreators({addRestaurant: addRestaurant}, dispatch);
 }
 
-export const ConnectedRestaurantInput = connect(mapStateToProps, mapDispatchToProps)(RestaurantInput)
+export const ConnectedRestaurantInput = connect(null, mapDispatchToProps)(RestaurantInput)
