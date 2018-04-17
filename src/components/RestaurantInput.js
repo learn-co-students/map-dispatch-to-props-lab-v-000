@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { addRestaurant } from '../actions/restaurants';
 import { connect } from 'react-redux';
-import { bindActionCreators } from '../../../../../AppData/Local/Microsoft/TypeScript/2.8/node_modules/redux';
+import { bindActionCreators } from 'redux';
 
 export class RestaurantInput extends Component {
 
@@ -34,15 +34,15 @@ export class RestaurantInput extends Component {
     return(
       <form onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
-          <input 
-            type="text" 
-            onChange={(event) => this.handleOnNameChange(event)} 
+          <input
+            type="text"
+            onChange={(event) => this.handleOnNameChange(event)}
             placeholder="restaurant name" />
         </p>
         <p>
-          <input 
-            type="text" 
-            onChange={(event) => this.handleOnLocationChange(event)} 
+          <input
+            type="text"
+            onChange={(event) => this.handleOnLocationChange(event)}
             placeholder="location" />
         </p>
         <input type="submit" />
