@@ -63,5 +63,7 @@ const mapDispatchToProps = (dispatch) => {
     addRestaurant: addRestaurant
   }, dispatch)
 }
+// the first `addRestaurant` is referencing a prop that my RestaurantInput component will have.
+// the second `addRestaurant` references my action creator function that returns my action object to then send over to my dispatch function in my store.
 
 export const ConnectedRestaurantInput = connect(mapStateToProps, mapDispatchToProps)(RestaurantInput)
