@@ -17,7 +17,7 @@ export class Restaurants extends Component {
   }
 };
 
-function mapStateToProps(state){
+const mapStateToProps = (state) => {
   return {restaurants: state.restaurants}
 }
 
