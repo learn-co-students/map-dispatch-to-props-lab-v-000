@@ -18,7 +18,7 @@ export class Restaurants extends Component {
 };
 
 function mapStateToProps(state){
-  return {restaurants: state.restaurants}
+  return { restaurants: state.restaurants }
 }
 
 export const ConnectedRestaurants = connect(mapStateToProps)(Restaurants);
