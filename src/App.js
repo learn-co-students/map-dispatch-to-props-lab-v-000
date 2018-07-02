@@ -7,7 +7,7 @@ export class App extends Component {
     return (
       <div className="App">
         <ConnectedRestaurantInput />
-        <ConnectedRestaurants />
+        <ConnectedRestaurants/>
       </div>
     );
   }
