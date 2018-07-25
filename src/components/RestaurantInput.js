@@ -50,4 +50,4 @@ export class RestaurantInput extends Component {
   }
 };
 
-export const ConnectedRestaurantInput = connect(null, null)(RestaurantInput)
+export const ConnectedRestaurantInput = connect(state => ({restaurants: state.restaurants}), { addRestaurant })(RestaurantInput)
