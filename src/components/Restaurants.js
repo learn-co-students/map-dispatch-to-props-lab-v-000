@@ -2,23 +2,19 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 
 export class Restaurants extends Component {
-
   render() {
-
-    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}>{restaurant.name}</li>);
-
     return (
       <div>
         <ul>
-          {restaurants}
+          {this.props.restaurants.map(
+            (rest, index) => <li key={index}>{rest.name}: {rest.location}</li>
+          )}
         </ul>
       </div>
     );
   }
 };
 
-function mapStateToProps(state){
-  return {restaurants: state.restaurants}
-}
-
-export const ConnectedRestaurants = connect(mapStateToProps)(Restaurants);
+export const ConnectedRestaurants = connect(
+  state => ({restaurants: state.restaurants})
+)(Restaurants);
