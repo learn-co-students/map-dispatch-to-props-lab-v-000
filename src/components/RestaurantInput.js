@@ -1,48 +1,44 @@
 import React, { Component } from 'react';
-import { addRestaurant } from '../actions/restaurants';
 import { connect } from 'react-redux';
+import { addRestaurant } from '../actions/restaurants';
 
 export class RestaurantInput extends Component {
 
-  constructor(props){
-    super(props);
-
-    this.state = {
-      name: '', location: ''
-    };
+  constructor(){
+    super();
+    this.state = {name: '', location: ''};
   }
 
-  handleOnNameChange(event) {
-    this.setState({
-      name: event.target.value
-    });
+  handleOnChange(e) {
+    this.setState({[e.target.name]: e.target.value});
   }
 
-  handleOnLocationChange(event) {
-    this.setState({
-      location: event.target.value
-    });
-  }
-
-  handleOnSubmit(event) {
-    event.preventDefault();
+  handleOnSubmit(e) {
+    e.preventDefault();
     this.props.addRestaurant(this.state);
+    this.setState({name: '', location: ''});
   }
 
   render() {
-    return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
+    return (
+      <form onSubmit={event => this.handleOnSubmit(event)}>
         <p>
-          <input 
-            type="text" 
-            onChange={(event) => this.handleOnNameChange(event)} 
-            placeholder="restaurant name" />
+          <input
+            type="text"
+            name="name"
+            value={this.state.name}
+            onChange={event => this.handleOnChange(event)}
+            placeholder="restaurant name"
+          />
         </p>
         <p>
-          <input 
-            type="text" 
-            onChange={(event) => this.handleOnLocationChange(event)} 
-            placeholder="location" />
+          <input
+            type="text"
+            name="location"
+            value={this.state.location}
+            onChange={event => this.handleOnChange(event)}
+            placeholder="restaurant location"
+          />
         </p>
         <input type="submit" />
       </form>
@@ -50,4 +46,7 @@ export class RestaurantInput extends Component {
   }
 };
 
-export const ConnectedRestaurantInput = connect(null, null)(RestaurantInput)
+export const ConnectedRestaurantInput = connect(
+  null,
+  {addRestaurant}
+)(RestaurantInput);
