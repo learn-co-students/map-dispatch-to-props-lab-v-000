@@ -33,16 +33,18 @@ export class RestaurantInput extends Component {
     return(
       <form onSubmit={(event) => this.handleOnSubmit(event)}>
         <p>
-          <input 
-            type="text" 
-            onChange={(event) => this.handleOnNameChange(event)} 
-            placeholder="restaurant name" />
+          <input
+            type="text"
+            onChange={(event) => this.handleOnNameChange(event)}
+            placeholder="restaurant name"
+            name="name" />
         </p>
         <p>
-          <input 
-            type="text" 
-            onChange={(event) => this.handleOnLocationChange(event)} 
-            placeholder="location" />
+          <input
+            type="text"
+            onChange={(event) => this.handleOnLocationChange(event)}
+            placeholder="location"
+            name="location" />
         </p>
         <input type="submit" />
       </form>
@@ -50,4 +52,5 @@ export class RestaurantInput extends Component {
   }
 };
 
-export const ConnectedRestaurantInput = connect(null, null)(RestaurantInput)
+
+export const ConnectedRestaurantInput = connect(null, {addRestaurant} )(RestaurantInput)
