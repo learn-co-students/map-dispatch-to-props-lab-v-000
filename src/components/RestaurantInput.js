@@ -21,7 +21,7 @@ export class RestaurantInput extends Component {
     });
   }
 
-  
+
 
   handleOnSubmit = event => {
     debugger
@@ -52,19 +52,19 @@ export class RestaurantInput extends Component {
   }
 };
 
-const mapStateToProps = (state) => {
-  return {
-    restaurants: state.restaurants
-  };
-};
+// const mapStateToProps = (state) => {
+//   return {
+//     restaurants: state.restaurants
+//   };
+// };
+//
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addRestaurant: (restaurant) => {
+//       dispatch(addRestaurant(restaurant))
+//     }
+//   };
+// };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    addRestaurant: (restaurant) => {
-      dispatch(addRestaurant(restaurant))
-    }
-  };
-};
-
-
-export default connect(mapStateToProps, mapDispatchToProps)(RestaurantInput);
+export default connect(state => ({name: state.name, location: state.location}), {addRestaurant})(RestaurantInput);
+// export default connect(mapStateToProps, mapDispatchToProps)(RestaurantInput);
