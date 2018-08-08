@@ -21,6 +21,8 @@ export class RestaurantInput extends Component {
     });
   }
 
+  
+
   handleOnSubmit = event => {
     debugger
     event.preventDefault();
