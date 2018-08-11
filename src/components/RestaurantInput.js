@@ -17,13 +17,14 @@ export class RestaurantInput extends Component {
 
   handleOnLocationChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+//      [event.target.id]: event.target.value //why doesn't this work?
+      location: event.target.value
     });
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // add missing code
+    this.props.addRestaurant(this.state);
   }
 
   render() {
@@ -49,6 +50,20 @@ export class RestaurantInput extends Component {
   }
 };
 
+// const mapStateToProps = state => {
+//   return { restaurants: state.restaurants }
+// }
+
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addRestaurant: () => {
+//       dispatch(addRestaurant())
+//     }
+//   }
+// }
+
 
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+//export default connect(null, {mapStateToProps, mapDispatchToProps})(RestaurantInput); //why doesn't this work?
+
+export default connect(null, {addRestaurant})(RestaurantInput); // don't get the "null"
