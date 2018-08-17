@@ -17,13 +17,18 @@ export class RestaurantInput extends Component {
 
   handleOnLocationChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+      location: event.target.value
     });
   }
 
   handleOnSubmit = event => {
-    event.preventDefault();
     // add missing code
+    event.preventDefault();
+    const restaurant = {
+      name: this.state.name,
+      location: this.state.location,
+    }
+    this.props.addRestaurant(restaurant)
   }
 
   render() {
@@ -45,10 +50,27 @@ export class RestaurantInput extends Component {
         </p>
         <input type="submit" />
       </form>
-    );
+      );
   }
 };
 
+// const mapDispatchtoProps = dispatch => {
+//   return {
+//     addRestaurant: () => {
+//       dispatch(addRestaurant())
+//     }
+//   }
+// }
 
+
+const mapStateToProps = state => {
+  return {
+    name: state.name,
+    location: state.location
+  }
+}
+
+export default connect(mapStateToProps, {addRestaurant} )(RestaurantInput)
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+// export default connect(mapDispatchtoProps)(RestaurantInput)
+// export default connect(mapDispatchtoProps)(RestaurantInput);
