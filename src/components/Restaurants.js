@@ -4,8 +4,9 @@ import { connect } from 'react-redux';
 class Restaurants extends Component {
 
   render() {
+    console.log(this.props.restaurants)
 
-    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}>{restaurant.restaurantName}</li>);
+    let restaurants = this.props.restaurants.map((restaurant, index) => <li key={index}> {restaurant.name}<br/> {restaurant.location}</li>);
 
     return (
       <div>
