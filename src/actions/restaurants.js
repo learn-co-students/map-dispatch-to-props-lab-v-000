@@ -4,3 +4,10 @@ export const addRestaurant = (restaurant) => {
     restaurant
   };
 };
+
+// export const addItem = (restaurant) => {
+//   return {
+//     type: 'ADD_RESTAURANT',
+//   restaurant
+//  };
+// };
