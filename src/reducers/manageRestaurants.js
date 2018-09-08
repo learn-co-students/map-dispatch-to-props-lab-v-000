@@ -1,3 +1,4 @@
+
 export default function manageRestaurants(state = {
   restaurants: []
 }, action) {
