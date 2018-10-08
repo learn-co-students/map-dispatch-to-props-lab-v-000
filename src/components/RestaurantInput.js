@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { addRestaurant } from '../actions/restaurants';
 import { connect } from 'react-redux';
 
-export class RestaurantInput extends Component {
+class RestaurantInput extends Component {
 
   state = {
     name: '',
@@ -17,13 +17,14 @@ export class RestaurantInput extends Component {
 
   handleOnLocationChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+      location: event.target.value
     });
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // add missing code
+    // this.state here is the current state of the individual restaurant object
+    this.props.addRestaurant(this.state);
   }
 
   render() {
@@ -34,6 +35,7 @@ export class RestaurantInput extends Component {
             type="text"
             onChange={(event) => this.handleOnNameChange(event)}
             id="name"
+            value={this.state.name}
             placeholder="restaurant name" />
         </p>
         <p>
@@ -41,6 +43,7 @@ export class RestaurantInput extends Component {
             type="text"
             onChange={(event) => this.handleOnLocationChange(event)}
             id="location"
+            value={this.state.location}
             placeholder="location" />
         </p>
         <input type="submit" />
@@ -49,6 +52,15 @@ export class RestaurantInput extends Component {
   }
 };
 
+const mapDispatchToProps = dispatch => {
+  return {
+    // remember arrow function syntax: the argument for addRestaurant is referenced twice here
+    addRestaurant: (restaurant) => {
+      dispatch(addRestaurant(restaurant))
+    }
+  }
+};
 
-//connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+//connect this component by wrapping RestaurantInput below;
+// this part of the app does not need to refer to the global state in store, so the first argument (for mapStateToProps) of connect can just be null
+export default connect(null, mapDispatchToProps)(RestaurantInput)
