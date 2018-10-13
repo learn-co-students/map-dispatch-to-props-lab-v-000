@@ -17,13 +17,15 @@ export class RestaurantInput extends Component {
 
   handleOnLocationChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+      location: event.target.value
     });
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // add missing code
+    console.log(this.state);
+
+    this.props.addRestaurant(this.state);
   }
 
   render() {
@@ -49,6 +51,20 @@ export class RestaurantInput extends Component {
   }
 };
 
+const mapStateToProps = state => {
+  return {};
+}
+
+const mapDispatchToProps = dispatch => {
+  return {
+    addRestaurant: (restaurant) => {
+      dispatch(addRestaurant(restaurant))
+    }
+  }
+}
 
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(RestaurantInput)
