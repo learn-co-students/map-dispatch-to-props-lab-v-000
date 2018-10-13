@@ -61,7 +61,11 @@ describe('restaurants input', () => {
     locationInput.simulate('change', { target: { value: 'philly' } });
     let form = wrapper.find('form').first();
     form.simulate('submit',  { preventDefault() {} });
-    expect(store.getState().restaurants[0]).to.deep.include({ name: 'chilis', location: 'philly' })
+    //expect(store.getState().restaurants[0]).to.deep.include({ name: 'chilis', location: 'philly' })
+    expect(store.getState().restaurants[0]).to.deep.include({ name: 'chilis'})
+    expect(store.getState().restaurants[0]).to.deep.include({ location: 'philly' })
+    //expect(store.getState().restaurants[0].name).to.equal('chilis')
+    //expect(store.getState().restaurants[0].location).to.equal('philly')
     expect(store.getState().restaurants.length).to.equal(1)
   });
 });
