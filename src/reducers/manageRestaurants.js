@@ -10,6 +10,7 @@ export default function manageRestaurants(state = {
       }
 
     default:
+      console.log(state)
       return state;
 
   }
