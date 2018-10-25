@@ -49,4 +49,4 @@ export class RestaurantInput extends Component {
   }
 }
 
-export default connect({addRestaurant})(RestaurantInput);
+export default connect(undefined, {addRestaurant})(RestaurantInput);
