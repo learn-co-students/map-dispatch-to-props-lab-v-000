@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { addRestaurant } from '../actions/restaurants';
 import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux'
 
 export class RestaurantInput extends Component {
 
@@ -51,19 +52,18 @@ export class RestaurantInput extends Component {
   }
 };
 
-export default connect(null, { addRestaurant })(RestaurantInput)
+
+const mapDispatchToProps = dispatch => {
+  return bindActionCreators({
+    addRestaurant: addRestaurant
+  }, dispatch);
+}; 
+
+export default connect(null, mapDispatchToProps)(RestaurantInput)
 
 // const mapStateToProps = state => {
 //   return {
 //     restaurantName: state.name,
 //     restaurantLocation: state.location
-//   }
-// }
-
-// const mapDispatchToProps = dispatch => {
-//   return {
-//     addRestaurant: (restaurant) => {
-//       dispatch(addRestaurant(restaurant))
-//     }
 //   }
 // }
