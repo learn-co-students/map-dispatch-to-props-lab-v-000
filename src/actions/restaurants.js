@@ -1,5 +1,5 @@
 export const addRestaurant = (restaurant) => {
-  return {
+  return {    
     type: 'ADD_RESTAURANT',
     restaurant
   };
