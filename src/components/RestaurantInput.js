@@ -17,13 +17,13 @@ export class RestaurantInput extends Component {
 
   handleOnLocationChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+      location: event.target.value
     });
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.addRestaurant();
+    this.props.addRestaurant(this.state);
   }
 
   render() {
@@ -52,11 +52,13 @@ export class RestaurantInput extends Component {
 //
 // Remember that mapDispatchToProps() is provided dispatch as an argument (passed in by connect when called), so we can wrap an imported action with dispatch within mapDispatchToProps(). Don't forget that the action provided in actions/restaurants.js is a function that must be called in order to return the action object.
 
-const mapDispatchToProps = (dispatch) => {
-  return {
-    addRestaurant: dispatch(addRestaurant())
-  };
-}
+// const mapDispatchToProps = dispatch => {
+//   return {
+//     addRestaurant: () => {
+//       dispatch(addRestaurant())
+//     }
+//   };
+// }
 
 //connect this component by wrapping RestaurantInput below
-export default connect(state => ({name: state.name, location: state.location}), mapDispatchToProps)(RestaurantInput)
+export default connect(null, {addRestaurant})(RestaurantInput)
