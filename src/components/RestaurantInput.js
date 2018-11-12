@@ -17,13 +17,12 @@ export class RestaurantInput extends Component {
 
   handleOnLocationChange = event => {
     this.setState({
-      [event.target.id]: event.target.value
+      location: event.target.value
     });
   }
 
   handleOnSubmit = event => {
     event.preventDefault();
-      debugger
     this.props.dispatch(addRestaurant(this.state))
 
   }
@@ -50,6 +49,8 @@ export class RestaurantInput extends Component {
     );
   }
 };
+
+
 
 
 
