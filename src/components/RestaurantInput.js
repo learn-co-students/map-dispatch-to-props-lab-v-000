@@ -52,9 +52,9 @@ export class RestaurantInput extends Component {
   }
 };
 
-export connect(null, mapDispatchToProps)(RestaurantInput)
 
-// export default connect(null, { addRestaurant })(RestaurantInput);
+
+export default connect(null, { addRestaurant })(RestaurantInput);
 //connect this component by wrapping RestaurantInput below
 // export default RestaurantInput
 
