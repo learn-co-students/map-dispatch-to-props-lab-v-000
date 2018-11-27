@@ -17,8 +17,10 @@ class Restaurants extends Component {
   }
 };
 
-const mapStateToProps = state => {
-  return { restaurants: state.restaurants }
+
+
+function mapStateToProps(state){
+  return {restaurants: state.restaurants}
 }
 
 export default connect(mapStateToProps)(Restaurants);
