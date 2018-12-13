@@ -50,5 +50,6 @@ export class RestaurantInput extends Component {
 };
 
 
+
 //connect this component by wrapping RestaurantInput below
-export default connect(null, { addRestaurant })(RestaurantInput);
+export default connect(null, {addRestaurant})(RestaurantInput);
