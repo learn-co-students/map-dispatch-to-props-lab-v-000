@@ -1,6 +1,8 @@
-export default function manageRestaurants(state = {
+let initState = {
   restaurants: []
-}, action) {
+};
+
+export default function manageRestaurants(state = initState, action) {
   switch (action.type) {
 
     case 'ADD_RESTAURANT':
