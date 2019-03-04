@@ -49,4 +49,4 @@ export class RestaurantInput extends Component {
   }
 };
 
-export default connect( state => ({ restaurants: state.restaurants }),{ addRestaurant })(RestaurantInput);
+export default connect( null, { addRestaurant })(RestaurantInput);
