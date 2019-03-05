@@ -37,7 +37,7 @@ describe('restaurants input', () => {
     );
 
     expect(store.getState().restaurants.length).to.equal(0)
-
+//console.log(store.getState().restaurants)
     let form = wrapper.find('form').first()
     form.simulate('submit', { preventDefault() {} })
 
@@ -52,7 +52,7 @@ describe('restaurants input', () => {
         <App />
       </Provider>
     );
-    
+
     expect(store.getState().restaurants.length).to.equal(0)
     let WrapperRestaurantInput = wrapper.find(RestaurantInput).first();
     let restaurantNameInput = wrapper.find('input').first();
