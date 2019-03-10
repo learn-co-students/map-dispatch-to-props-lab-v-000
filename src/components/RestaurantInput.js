@@ -31,7 +31,6 @@ export class RestaurantInput extends Component {
 	}
 
 	render() {
-		debugger
 		return (
 			<form onSubmit={(event) => this.handleOnSubmit(event)}>
 				<p>
