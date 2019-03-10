@@ -4,51 +4,55 @@ import { connect } from 'react-redux';
 
 export class RestaurantInput extends Component {
 
-  state = {
-    name: '',
-    location: ''
-  }
+	state = {
+		name: '',
+		location: ''
+	}
 
-  handleOnNameChange = event => {
-    this.setState({
-      name: event.target.value
-    });
-  }
+	handleOnNameChange = event => {
+		this.setState({
+			name: event.target.value
+		});
+	}
 
-  handleOnLocationChange = event => {
-    this.setState({
-      location: event.target.value
-    });
-  }
+	handleOnLocationChange = event => {
+		this.setState({
+			location: event.target.value
+		});
+	}
 
-  handleOnSubmit = event => {
-    event.preventDefault();
-    // add missing code
-  }
+	handleOnSubmit = event => {
+		event.preventDefault();
+		this.props.addRestaurant(this.state)
+		// this.props.addRestaurant({
+		// 	name: this.state.name,
+		// 	location: this.state.location
+		// })
+	}
 
-  render() {
-    return(
-      <form onSubmit={(event) => this.handleOnSubmit(event)}>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnNameChange(event)}
-            id="name"
-            placeholder="restaurant name" />
-        </p>
-        <p>
-          <input
-            type="text"
-            onChange={(event) => this.handleOnLocationChange(event)}
-            id="location"
-            placeholder="location" />
-        </p>
-        <input type="submit" />
-      </form>
-    );
-  }
+	render() {
+		debugger
+		return (
+			<form onSubmit={(event) => this.handleOnSubmit(event)}>
+				<p>
+					<input
+						type="text"
+						onChange={(event) => this.handleOnNameChange(event)}
+						id="name"
+						placeholder="restaurant name" />
+				</p>
+				<p>
+					<input
+						type="text"
+						onChange={(event) => this.handleOnLocationChange(event)}
+						id="location"
+						placeholder="location" />
+				</p>
+				<input type="submit" />
+			</form>
+		);
+	}
 };
 
-
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+export default connect(null, { addRestaurant })(RestaurantInput)
