@@ -13,4 +13,12 @@ export class App extends Component {
   }
 };
 
-export default App;
+export default App; 
+
+// export default connect(state => ({restaurants: state.restaurants}))(App);
+
+// const mapStateToProps = (state) => {
+//   return { items: state.items }
+// }
+
+// export default connect(mapStateToProps)(App); 
