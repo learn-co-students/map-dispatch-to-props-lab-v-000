@@ -23,7 +23,8 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // add missing code
+		this.props.addRestaurant(this.state)
+
   }
 
   render() {
@@ -43,12 +44,10 @@ export class RestaurantInput extends Component {
             id="location"
             placeholder="location" />
         </p>
-        <input type="submit" />
+        <input type="submit"  />
       </form>
     );
   }
 };
 
-
-//connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+export default connect(null, { addRestaurant } )(RestaurantInput);
