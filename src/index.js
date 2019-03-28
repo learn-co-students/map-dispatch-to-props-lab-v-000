@@ -17,7 +17,7 @@ ReactDOM.render(
   // Provider ensures that the entire React application 
   // can potentially access data from the store
   <Provider store={store}>
-    <App store={store}/>
+    <App />
   </Provider>,
   document.getElementById('root')
 )
