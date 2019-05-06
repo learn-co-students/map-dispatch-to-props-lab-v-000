@@ -6,8 +6,10 @@ export class App extends Component {
   render() {
     return (
       <div className="App">
-        <RestaurantInput />
-        <Restaurants />
+        <React.Fragment>
+          <RestaurantInput />
+          <Restaurants />
+        </React.Fragment>
       </div>
     );
   }
