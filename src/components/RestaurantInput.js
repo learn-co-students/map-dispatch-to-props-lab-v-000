@@ -24,6 +24,7 @@ export class RestaurantInput extends Component {
   handleOnSubmit = event => {
     event.preventDefault();
     // add missing code
+    this.props.addRestaurant(this.state);
   }
 
   render() {
@@ -51,4 +52,7 @@ export class RestaurantInput extends Component {
 
 
 //connect this component by wrapping RestaurantInput below
-export default RestaurantInput
+
+// since not using mapStateToProps to execute a Redux store update
+ // use null as first argument.
+export default connect(null, { addRestaurant })(RestaurantInput);
