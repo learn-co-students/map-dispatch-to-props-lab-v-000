@@ -1,8 +1,16 @@
 import React, { Component } from 'react';
 import RestaurantInput from './components/RestaurantInput';
 import Restaurants from './components/Restaurants';
+import { connect } from 'react-redux';
+import { addRestaurant } from  './actions/restaurants';
 
 export class App extends Component {
+
+
+ handleOnClick = event => {
+   this.props.addRestaurant()
+ }
+
   render() {
     return (
       <div className="App">
@@ -13,4 +21,4 @@ export class App extends Component {
   }
 };
 
-export default App;
+export default connect(state => ({ restaurants: state.restaurants }), { addRestaurant })(App);
