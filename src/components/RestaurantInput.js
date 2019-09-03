@@ -15,6 +15,8 @@ export class RestaurantInput extends Component {
     });
   }
 
+  //we apparently still have an initial state and use setState for input components?
+
   handleOnLocationChange = event => {
     this.setState({
       location: event.target.value
