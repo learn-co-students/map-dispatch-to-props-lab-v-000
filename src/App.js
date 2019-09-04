@@ -7,6 +7,7 @@ export class App extends Component {
     return (
       <div className="App">
         <RestaurantInput />
+        {/* //beautifully, we don't need to pass any props down through the children components */}
         <Restaurants />
       </div>
     );
