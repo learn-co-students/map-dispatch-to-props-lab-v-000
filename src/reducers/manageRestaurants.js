@@ -11,6 +11,5 @@ export default function manageRestaurants(state = {
 
     default:
       return state;
-
   }
 };
