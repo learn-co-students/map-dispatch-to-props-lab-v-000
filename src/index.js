@@ -9,7 +9,10 @@ const store = createStore(manageRestaurants, window.__REDUX_DEVTOOLS_EXTENSION__
 
 ReactDOM.render(
   <Provider store={store}>
-    <App store={store}/>
+    <App store={store} />
+    {/* store is "stored" in here and it passed as a prop
+    then wraps up "APP" to be used by everything in out APP.js . 
+  */}
   </Provider>,
   document.getElementById('root')
 );

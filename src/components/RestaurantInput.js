@@ -26,7 +26,7 @@ export class RestaurantInput extends Component {
     event.preventDefault();
     // add missing code
     
-    this.props.addRestaurant(addRestaurant(this.state))
+    this.props.addRestaurant(this.state)
   }
 
   render() {
@@ -46,12 +46,12 @@ export class RestaurantInput extends Component {
             id="location"
             placeholder="location" />
         </p>
+
         <input type="submit" />
       </form>
     );
   }
 };
-
 
 
 

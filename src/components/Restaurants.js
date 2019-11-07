@@ -22,3 +22,4 @@ const mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps)(Restaurants);
+//  This is connecting store to compenets restaurants.  
