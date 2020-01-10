@@ -52,7 +52,7 @@ describe('restaurants input', () => {
         <App />
       </Provider>
     );
-    
+
     expect(store.getState().restaurants.length).to.equal(0)
     let WrapperRestaurantInput = wrapper.find(RestaurantInput).first();
     let restaurantNameInput = wrapper.find('input').first();
@@ -64,4 +64,5 @@ describe('restaurants input', () => {
     expect(store.getState().restaurants[0]).to.deep.include({ name: 'chilis', location: 'philly' })
     expect(store.getState().restaurants.length).to.equal(1)
   });
+
 });
