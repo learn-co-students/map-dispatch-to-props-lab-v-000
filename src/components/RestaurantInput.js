@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { addRestaurant } from '../actions/restaurants';
 import { connect } from 'react-redux';
 
 export class RestaurantInput extends Component {
@@ -22,7 +23,7 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    this.props.dispatch({type: 'ADD_RESTAURANT', restaurant: this.state})
+    this.props.dispatch(addRestaurant(this.state))
   }
 
   render() {
