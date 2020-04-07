@@ -23,12 +23,7 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    const { name, location } = this.state
-    this.props.addRestaurant({name, location})
-    this.setState({
-      name: '',
-      location: ''
-    })
+    this.props.addRestaurant(this.state);
   }
 
   render() {
