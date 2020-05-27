@@ -13,4 +13,8 @@ export class App extends Component {
   }
 };
 
+// function mapStateToProps(state) {
+//   return {restaurants: state.restaurants}
+// }
+
 export default App;
