@@ -59,3 +59,7 @@ const mapDispatchToProps = dispatch => {
 
 //connect this component by wrapping RestaurantInput below
 export default connect(null, mapDispatchToProps)(RestaurantInput);
+
+// This is in the solution as an alternative; I can't believe that works, even when calling addRestaurant with arguments!
+// export default connect(null, { addRestaurant })(RestaurantInput);
+
