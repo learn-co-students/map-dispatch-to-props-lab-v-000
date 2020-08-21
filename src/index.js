@@ -1,3 +1,7 @@
+// Redux is already set up through index.js and the reducer manageRestaurants. 
+// Write a mapDispatchToProps() function that allows you to pass dispatched actions as props.
+
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
