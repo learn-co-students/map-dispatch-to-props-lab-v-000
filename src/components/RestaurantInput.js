@@ -1,4 +1,5 @@
 // Build an application to keep track of your favorite restaurants. 
+// Write a mapDispatchToProps() function that allows you to pass dispatched actions as props.
 // Keep the React application separated from the Redux application by using the
   //Provider component and the connect() function. 
 // We will not include a reference to the store in any component except for the Provider.
