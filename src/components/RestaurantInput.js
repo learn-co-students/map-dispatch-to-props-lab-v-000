@@ -8,10 +8,8 @@ export class RestaurantInput extends Component {
     name: '',
     location: ''
   }
-
   
   handleOnNameChange = event => {
-    // debugger
     this.setState({
       name: event.target.value
     });
@@ -25,15 +23,9 @@ export class RestaurantInput extends Component {
 
   handleOnSubmit = event => {
     event.preventDefault();
-    // add missing code
-    // debugger
-    // mine
     const restaurant = this.state;
-    // mine
-    // debugger
     this.props.addRestaurant(this.state);
   }
-
 
   render() {
     return(
@@ -58,19 +50,6 @@ export class RestaurantInput extends Component {
   }
 };
 
-// const mapStateToProps = (state) => {
-  // restaurants: state.restaurants
-// }
-
-const mapStateToProps = state => {
-  return {
-    // restaurants: state.restaurants
-    state
-
-  }
-}
-
-// mine
 const mapDispatchToProps = dispatch => {
   return {
     addRestaurant: (state) => { 
@@ -78,6 +57,5 @@ const mapDispatchToProps = dispatch => {
     }
   };
 };
-//connect this component by wrapping RestaurantInput below
-// mine
+
 export default connect(null, mapDispatchToProps)(RestaurantInput);
