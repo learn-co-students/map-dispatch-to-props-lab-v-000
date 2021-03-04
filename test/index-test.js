@@ -41,6 +41,8 @@ describe('restaurants input', () => {
     let form = wrapper.find('form').first()
     form.simulate('submit', { preventDefault() {} })
 
+    debugger
+
     expect(store.getState().restaurants.length).to.equal(1)
 
   });
