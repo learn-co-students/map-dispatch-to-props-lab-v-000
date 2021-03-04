@@ -17,7 +17,7 @@ export class RestaurantInput extends Component {
     });
   }
 
-  
+  // test
   handleOnLocationChange = event => {
     this.setState({
       location: event.target.value
