@@ -1129,7 +1129,7 @@
 	ReactElement.cloneElement = function (element, config, children) {
 	  var propName;
 
-	  // Original props are copied
+	   props are copied
 	  var props = _assign({}, element.props);
 
 	  // Reserved names are extracted
